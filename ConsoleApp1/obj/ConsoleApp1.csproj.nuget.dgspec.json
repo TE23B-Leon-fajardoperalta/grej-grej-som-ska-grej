@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\leon.fajardoperalta\\Desktop\\Prog 1\\grej grej som ska grej\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "c:\\Users\\leon.fajardoperalta\\Desktop\\Prog 1\\grej grej som ska grej\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\leon.fajardoperalta\\Desktop\\Prog 1\\grej grej som ska grej\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "c:\\Users\\leon.fajardoperalta\\Desktop\\Prog 1\\grej grej som ska grej\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leon.fajardoperalta\\Desktop\\Prog 1\\grej grej som ska grej\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "c:\\Users\\leon.fajardoperalta\\Desktop\\Prog 1\\grej grej som ska grej\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\leon.fajardoperalta\\Desktop\\Prog 1\\grej grej som ska grej\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectPath": "c:\\Users\\leon.fajardoperalta\\Desktop\\Prog 1\\grej grej som ska grej\\ConsoleApp1\\ConsoleApp1.csproj",
         "packagesPath": "C:\\Users\\leon.fajardoperalta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leon.fajardoperalta\\Desktop\\Prog 1\\grej grej som ska grej\\ConsoleApp1\\obj\\",
+        "outputPath": "c:\\Users\\leon.fajardoperalta\\Desktop\\Prog 1\\grej grej som ska grej\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
