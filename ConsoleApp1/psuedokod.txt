@@ -1,4 +1,7 @@
 METOD
 LISTA POTENTIALA
-.random som väljer lista potentialen
+.random som väljer lista potentialen med list.count som max
 LISTA MED POTENTIALEN
+for loop med i < list.count 
+writeline i loopen
+sen anropa metoden i if == 3
