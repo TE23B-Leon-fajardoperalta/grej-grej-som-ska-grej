@@ -4,4 +4,4 @@ LISTA POTENTIALA
 LISTA MED POTENTIALEN
 for loop med i < list.count 
 writeline i loopen
-sen anropa metoden i if == 3
+sen anropa metoden  if == 3
