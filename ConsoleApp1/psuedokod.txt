@@ -1,0 +1,4 @@
+METOD
+LISTA POTENTIALA
+.random som väljer lista potentialen
+LISTA MED POTENTIALEN

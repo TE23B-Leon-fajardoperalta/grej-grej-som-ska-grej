@@ -51,7 +51,6 @@ static bool jaslashnej()
 
 
 
-
 Console.WriteLine("Your wake.");
 Console.WriteLine("Actions Listed below");
 
@@ -78,22 +77,36 @@ while (ut == 0)
     string las = Console.ReadLine();
     ut = 0;
     int.TryParse(las, out ut);
-    if (ut == 1 && energi > 0)
+    if (ut == 1)
     {
-        energi = energi - 1;
-        guldmynt = guldmynt + 1;
+        if (energi <= 0)
+        {
+            Console.WriteLine("((LIMIT!!!))");
+        }
+        else
+        {
+            energi = energi - 1;
+            guldmynt = guldmynt + 1;
+        }
 
         stats(energi, guldmynt, jobb);
     }
-    if (ut == 2 && energi < energimax)
+    if (ut == 2)
     {
-        energi = energi + 1;
+        if (energi >= energimax)
+        {
+            Console.WriteLine("((LIMIT!!!))");
+        }
+        else
+        {
+            energi = energi + 1;
+        }
+
         stats(energi, guldmynt, jobb);
     }
     if (ut == 3)
     {
         
-
     }
     ut = 0;
 }
