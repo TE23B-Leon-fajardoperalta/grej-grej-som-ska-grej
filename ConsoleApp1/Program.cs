@@ -31,6 +31,24 @@ static bool jaslashnej()
     }
     return false;
 }
+static void shopper()
+{
+    List<string> potential = ["eld", "vind", "vatten", "jord"];
+    List<string> potentialen = [];
+
+    int wow = Random.Shared.Next(4);
+
+    potentialen.Add(potential[wow]);
+    potential.RemoveAt(wow);
+
+
+    for (int i = 0; i < potentialen.Count; i++)
+    {
+        Console.WriteLine(potentialen[i]);
+    }
+}
+
+
 
 
 
@@ -59,8 +77,9 @@ float energimax = 5;
 float guldmynt = 0;
 float guldmax = 20;
 float jobb = 1;
+float kraft = 1;
 
-List<string> hund = ["1 Workmax", "2 Restmax", "3 Statsmax"];
+List<string> hund = ["1 Workmax", "2 Restmax", "3 Shopmax"];
 List<int> hundint = [1, 2, 3];
 
 
@@ -83,10 +102,14 @@ while (ut == 0)
         {
             Console.WriteLine("((LIMIT!!!))");
         }
+        else if (guldmynt >= guldmax)
+        {
+            guldmynt = guldmax;
+        }
         else
         {
-            energi = energi - 1;
-            guldmynt = guldmynt + 1;
+            energi = energi - kraft;
+            guldmynt = guldmynt + kraft;
         }
 
         stats(energi, guldmynt, jobb);
@@ -95,18 +118,34 @@ while (ut == 0)
     {
         if (energi >= energimax)
         {
+            energi = energimax;
             Console.WriteLine("((LIMIT!!!))");
+        }
+        else if (energi < -1)
+        {
+            energi = 0;
         }
         else
         {
-            energi = energi + 1;
+            energi = energi + kraft;
         }
 
         stats(energi, guldmynt, jobb);
     }
     if (ut == 3)
     {
-        
+        if (guldmynt != guldmax)
+        {
+            Console.WriteLine("((LIMIT!!!))");
+
+        }
+        else
+        {
+
+            shopper();
+            guldmynt = 0;
+            kraft = kraft * 2;
+        }
     }
     ut = 0;
 }
