@@ -31,7 +31,7 @@ static bool jaslashnej()
     }
     return false;
 }
-static void shopper()
+static string shopper()
 {
     List<string> potential = ["eld", "vind", "vatten", "jord"];
     List<string> potentialen = [];
@@ -44,9 +44,10 @@ static void shopper()
 
     for (int i = 0; i < potentialen.Count; i++)
     {
-        Console.WriteLine(potentialen[i]);
+        return potentialen[i];
     }
-}
+    return potentialen[0];
+}    
 
 
 
@@ -80,8 +81,7 @@ float jobb = 1;
 float kraft = 1;
 
 List<string> hund = ["1 Workmax", "2 Restmax", "3 Shopmax"];
-List<int> hundint = [1, 2, 3];
-
+List<string> krukanamn = [];
 
 for (int i = 0; i < hund.Count; i++)
 {
@@ -141,10 +141,16 @@ while (ut == 0)
         }
         else
         {
-
-            shopper();
-            guldmynt = 0;
-            kraft = kraft * 2;
+            string somvad = shopper();
+            krukanamn.Add(somvad);
+            for(int i = 0; i < krukanamn.Count; i++)
+            {
+                Console.WriteLine(krukanamn[i]);
+            }
+            
+            
+            // guldmynt = 0;
+            // kraft = kraft * 2;
         }
     }
     ut = 0;
