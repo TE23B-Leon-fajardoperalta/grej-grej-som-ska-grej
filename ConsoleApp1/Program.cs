@@ -102,16 +102,21 @@ while (ut == 0)
         {
             Console.WriteLine("((LIMIT!!!))");
         }
+        else if (energi - kraft < 0)
+        {
+            energi = 0;
+        }
         else if (guldmynt >= guldmax)
         {
             guldmynt = guldmax;
         }
+
         else
         {
             energi = energi - kraft;
+
             guldmynt = guldmynt + kraft;
         }
-
         stats(energi, guldmynt, jobb);
     }
     if (ut == 2)
@@ -121,15 +126,10 @@ while (ut == 0)
             energi = energimax;
             Console.WriteLine("((LIMIT!!!))");
         }
-        else if (energi < -1)
-        {
-            energi = 0;
-        }
         else
         {
             energi = energi + kraft;
         }
-
         stats(energi, guldmynt, jobb);
     }
     if (ut == 3)
