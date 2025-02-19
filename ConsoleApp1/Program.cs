@@ -149,8 +149,8 @@ while (ut == 0)
             }
             
             
-            // guldmynt = 0;
-            // kraft = kraft * 2;
+            guldmynt = 0;
+            kraft = kraft * 2;
         }
     }
     ut = 0;
