@@ -13,6 +13,7 @@ static bool jaslashnej()
     bool kolla = false;
 
     int suh = 0;
+    Console.WriteLine("ja(1) eller nej(2)");
     while (kolla == false && suh < 1 || suh > 2)
     {
 
@@ -33,7 +34,7 @@ static bool jaslashnej()
 }
 static string shopper()
 {
-    List<string> potential = ["eld", "vind", "vatten", "jord"];
+    List<string> potential = ["((Eld))", "((Vind))", "((Vatten))", "((Jord))"];
     List<string> potentialen = [];
 
     int wow = Random.Shared.Next(4);
@@ -47,7 +48,7 @@ static string shopper()
         return potentialen[i];
     }
     return potentialen[0];
-}    
+}
 
 
 
@@ -78,10 +79,11 @@ float energimax = 5;
 float guldmynt = 0;
 float guldmax = 20;
 float jobb = 1;
-float kraft = 1;
+float kraft = 5;
 
 List<string> hund = ["1 Workmax", "2 Restmax", "3 Shopmax"];
-List<string> krukanamn = [];
+List<string> krukalist = [];
+List<string> krukaköpt = [];
 
 for (int i = 0; i < hund.Count; i++)
 {
@@ -136,23 +138,58 @@ while (ut == 0)
     {
         if (guldmynt != guldmax)
         {
-            Console.WriteLine("((LIMIT!!!))");
-
+            Console.WriteLine("Elements:");
+            for (int i = 0; i < krukaköpt.Count; i++)
+            {
+                Console.WriteLine(krukaköpt[i]);
+            }
         }
+
         else
         {
             string somvad = shopper();
-            krukanamn.Add(somvad);
-            for(int i = 0; i < krukanamn.Count; i++)
+            krukalist.Add(somvad);
+
+            for (int i = 0; i < krukalist.Count; i++)
             {
-                Console.WriteLine(krukanamn[i]);
+                Console.WriteLine(krukalist[i]);
             }
-            
-            
+
+
             guldmynt = 0;
             kraft = kraft * 2;
+            int utomhus = 0;
+            bool mhm = false;
+
+
+
+            while (mhm != true || utomhus! < 0 && utomhus! > krukaköpt.Count)
+            {
+                Console.WriteLine(" vilken ");
+                string inomhus = Console.ReadLine();
+                mhm = int.TryParse(inomhus, out utomhus);
+
+                if (utomhus > krukaköpt.Count)
+                {
+                    mhm = false;
+                }
+                else
+                {
+                    krukaköpt.Add(krukalist[utomhus]);
+                    krukalist.RemoveAt(utomhus);
+                }
+
+
+
+                if (mhm == false)
+                {
+                    Console.WriteLine("try igen");
+                }
+            }
+
         }
     }
+
     ut = 0;
 }
 
