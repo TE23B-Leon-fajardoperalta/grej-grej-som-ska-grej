@@ -34,15 +34,16 @@ static bool jaslashnej()
 static string shopper()
 {
     List<string> potential = ["((Eld))", "((Vind))", "((Vatten))", "((Jord))"];
+    List<string> potentialen = [];
 // FIXA
 
     int wow = Random.Shared.Next(4);
+    potentialen.Add(potential[wow]);
 
-    for (int i = 0; i < potential.Count; i++)
+    for (int i = 0; i < potentialen.Count; i++)
     {
-        return potential[i];
+        return potentialen[i];
     }
-    potential.RemoveAt(wow);
     return "wow";
 }
 
