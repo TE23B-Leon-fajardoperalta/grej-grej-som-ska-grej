@@ -19,7 +19,6 @@ static bool jaslashnej()
 
         string svar = Console.ReadLine();
         kolla = int.TryParse(svar, out suh);
-        Console.WriteLine("skriv igen");
         if (suh == 1)
         {
             return true;
@@ -35,19 +34,16 @@ static bool jaslashnej()
 static string shopper()
 {
     List<string> potential = ["((Eld))", "((Vind))", "((Vatten))", "((Jord))"];
-    List<string> potentialen = [];
+// FIXA
 
     int wow = Random.Shared.Next(4);
 
-    potentialen.Add(potential[wow]);
-    potential.RemoveAt(wow);
-
-
-    for (int i = 0; i < potentialen.Count; i++)
+    for (int i = 0; i < potential.Count; i++)
     {
-        return potentialen[i];
+        return potential[i];
     }
-    return potentialen[0];
+    potential.RemoveAt(wow);
+    return "wow";
 }
 
 
@@ -134,6 +130,7 @@ while (ut == 0)
         }
         stats(energi, guldmynt, jobb);
     }
+
     if (ut == 3)
     {
         if (guldmynt != guldmax)
@@ -145,45 +142,45 @@ while (ut == 0)
             }
         }
 
+
         else
         {
-            string somvad = shopper();
-            krukalist.Add(somvad);
+            krukalist.Add(shopper());
 
             for (int i = 0; i < krukalist.Count; i++)
             {
-                Console.WriteLine(krukalist[i]);
+                Console.WriteLine(krukalist[i] + i);
             }
-
 
             guldmynt = 0;
             kraft = kraft * 2;
+
+
             int utomhus = 0;
             bool mhm = false;
 
-
-
             while (mhm != true || utomhus! < 0 && utomhus! > krukaköpt.Count)
             {
-                Console.WriteLine(" vilken ");
+
+                Console.WriteLine("Which element");
+                Console.WriteLine(0 + "till" + (krukalist.Count - 1) );
                 string inomhus = Console.ReadLine();
                 mhm = int.TryParse(inomhus, out utomhus);
 
-                if (utomhus > krukaköpt.Count)
+                if (utomhus > krukalist.Count-1)
                 {
                     mhm = false;
+                    Console.WriteLine("try igen");
                 }
                 else
                 {
-                    krukaköpt.Add(krukalist[utomhus]);
-                    krukalist.RemoveAt(utomhus);
-                }
-
-
-
-                if (mhm == false)
-                {
-                    Console.WriteLine("try igen");
+                    if (jaslashnej() == true)
+                    {
+                        krukaköpt.Add(krukalist[utomhus]);
+                        krukalist.RemoveAt(utomhus);
+                        Console.WriteLine("du fick" + krukaköpt[utomhus]);
+                        mhm = true;
+                    }
                 }
             }
 
