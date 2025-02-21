@@ -150,7 +150,7 @@ while (ut == 0)
 
             for (int i = 0; i < krukalist.Count; i++)
             {
-                Console.WriteLine(krukalist[i] + i);
+                Console.WriteLine(krukalist[i] + " Element"+ "."+ i);
             }
 
             guldmynt = 0;
@@ -164,7 +164,6 @@ while (ut == 0)
             {
 
                 Console.WriteLine("Which element");
-                Console.WriteLine(0 + "till" + (krukalist.Count - 1) );
                 string inomhus = Console.ReadLine();
                 mhm = int.TryParse(inomhus, out utomhus);
 
@@ -179,8 +178,12 @@ while (ut == 0)
                     {
                         krukaköpt.Add(krukalist[utomhus]);
                         krukalist.RemoveAt(utomhus);
-                        Console.WriteLine("du fick" + krukaköpt[utomhus]);
+                        Console.WriteLine("U got " + krukaköpt[utomhus]);
                         mhm = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("U left your element");
                     }
                 }
             }
