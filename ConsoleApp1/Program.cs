@@ -7,7 +7,7 @@
 }
 
 
-static bool jaslashnej()
+static bool JaSlashNej()
 {
 
     bool kolla = false;
@@ -31,13 +31,17 @@ static bool jaslashnej()
     }
     return false;
 }
-static string shopper()
+static string Shopper()
 {
     List<string> potential = ["((Eld))", "((Vind))", "((Vatten))", "((Jord))"];
     List<string> potentialen = [];
 // FIXA
 
     int wow = Random.Shared.Next(4);
+
+    return potential[wow];
+
+
     potentialen.Add(potential[wow]);
 
     for (int i = 0; i < potentialen.Count; i++)
@@ -70,6 +74,7 @@ static string shopper()
 
 Console.WriteLine("Your wake.");
 Console.WriteLine("Actions Listed below");
+Console.WriteLine("get 20 gold & Shopmax");
 
 float energi = 0;
 float energimax = 5;
@@ -146,7 +151,7 @@ while (ut == 0)
 
         else
         {
-            krukalist.Add(shopper());
+            krukalist.Add(Shopper());
 
             for (int i = 0; i < krukalist.Count; i++)
             {
@@ -174,11 +179,11 @@ while (ut == 0)
                 }
                 else
                 {
-                    if (jaslashnej() == true)
+                    if (JaSlashNej() == true)
                     {
                         krukaköpt.Add(krukalist[utomhus]);
                         krukalist.RemoveAt(utomhus);
-                        Console.WriteLine("U got " + krukaköpt[utomhus]);
+                        Console.WriteLine("U got " + krukaköpt.Last());
                         mhm = true;
                     }
                     else
