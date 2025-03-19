@@ -197,6 +197,17 @@ while (ut == 0)
     }
 
     ut = 0;
+    
 }
 
 Console.ReadLine();
+
+
+
+
+
+
+
+
+
+// biologisk, Arv serotinin dopamin noradrenalin (amygdala fight or flight) (pannlobb intelligens minne) hippokampus
